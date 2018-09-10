@@ -1,4 +1,4 @@
-var imageA = document.getElementById("imageA");
+var imageA = document.getElementById("#imageA");
 var imageIndex = 0;
 
 let gameData = [
@@ -32,12 +32,14 @@ let gameData = [
 
 
 
-// for (var i = 0; i < gameData.length; i++) {
-//     console.log( gameData[i].imageA)
+for (var i = 0; i < gameData.length; i++) {
+    console.log( gameData[i].imageA)
     
-//     var imageA= document.createElement("img");
-// 	   document.querySelector("imageA").appendChild(imageA);
-// }
+    // var createImageTag = document.createElement('img');
+    var imageDivA = document.querySelector("#imageA");
+    var firstImageA = gameData[i].imageDivA;
+	document.firstImageA.appendChild(imageDivA);
+}
 
 // for (var i = 0; i < gameData.length; i++){
 //     console.log(gameData[i].imageA);
