@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
 var imageA = document.getElementById("#imageA");
 var imageIndex = 0;
 
 var gameData = [{
-    imageA: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiQsoLZiZXdAhWQNd8KHQ98AJUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.bbc.com%2Fnews%2Fworld-us-canada-42808521&psig=AOvVaw3BVbEpQOJSai2hUGd0e9Iw&ust=1535728788141158",
-    imageB: "https://i.kym-cdn.com/entries/icons/mobile/000/005/608/nyan-cat-01-625x450.jpg",
+    imageA: '../src/img/bey.jpg',
+    imageB: '../src/img/rihanna.jpg',
     votesA: 0,
     votesB: 0
 }, {
@@ -20,29 +20,48 @@ var gameData = [{
     votesB: 0
 }];
 
-// function changeImage() {
-//   imageA.setAttribute("url",gameData[imageIndex]);
-//   imageIndex = (imageIndex + 1) % gameData.length;
+//displaying image A & image B
+
+var imageDivA = document.getElementById("imageA");
+var imageDivB = document.getElementById("imageB");
+
+var firstImageA = document.createElement('img');
+var firstImageB = document.createElement('img');
+
+firstImageA.setAttribute("src", gameData[0].imageA);
+firstImageB.setAttribute("src", gameData[0].imageB);
+
+imageDivA.appendChild(firstImageA);
+imageDivB.appendChild(firstImageB);
+
+//loop the images 
+
+
+// function allImages() {
+//     if (imageIndex >= gameData.length) {
+//         imageIndex = i;
+//     } else {
+//         imageIndex++
+//     }
+
+//     imageA.src = gameData[imageIndex];
+
+//    setInterval(imageA, 3000);
 // }
 
-// setInterval(changeImage, 5000);
+// allImages();
 
-
-for (var i = 0; i < gameData.length; i++) {
-    console.log(gameData[i].imageA);
-
-    // var createImageTag = document.createElement('img');
-    var imageDivA = document.querySelector("#imageA");
-    var firstImageA = gameData[i].imageDivA;
-    document.firstImageA.appendChild(imageDivA);
-}
 
 // for (var i = 0; i < gameData.length; i++){
 //     console.log(gameData[i].imageA);
+// }
 
-//     var imageA = document.getElementById('imageA');
-//     img.src = imageA[0];
-//     document.body.appendChild(imageA);
+// var i = 0;
+
+// while (i < gameData.length);
+// {
+//     document.images[0].src = gameData[i];
+//     i++;
 // }
 
 
@@ -56,11 +75,4 @@ for (var i = 0; i < gameData.length; i++) {
 // show the first set of images in gameData
 // create the first set of images in gameData, put them in the body
 // create 2 images, get their srcs from gameData, put them in the body
-
-
-// var interval = setInterval(doStuff, 2000); // 2000 ms = start after 2sec 
-// function doStuff() {
-//   alert('this is a 2 second warning');
-//   clearInterval(interval);
-// }
 //# sourceMappingURL=main.js.map
