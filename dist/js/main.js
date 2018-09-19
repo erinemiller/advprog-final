@@ -9,13 +9,13 @@ var gameData = [{
     votesA: 0,
     votesB: 0
 }, {
-    imageA: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjhmPDsiZXdAhVFmuAKHRarCTcQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pepsi.com%2F&psig=AOvVaw1ovzbEiwnP0Zsvs1WIRZ0t&ust=1535728828218031",
-    imageB: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwizlIf1iZXdAhUkiOAKHT-WCaIQjRx6BAgBEAU&url=http%3A%2F%2Fgogrocerchicago.com%2Fgocatering%2Fproduct%2Fcoke-diet-coke-sprite-coke-zero%2F&psig=AOvVaw2lUinBqYT2XqW77j09hopI&ust=1535728843119651",
+    imageA: "../src/img/timber.jpg",
+    imageB: "../src/img/bieb.jpg",
     votesA: 0,
     votesB: 0
 }, {
-    imageA: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiLrOCGipXdAhVmTd8KHZsWBeUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.grammy.com%2Fgrammys%2Fartists%2Fbeyonc%25C3%25A9-knowles&psig=AOvVaw0evsU_HqXbQGooVQ4QHqVH&ust=1535728883402580",
-    imageB: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjC2JWPipXdAhUSmuAKHQ3mDjYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hotnewhiphop.com%2Frihanna-is-all-smiles-in-rare-family-photo-with-mom-and-dad-news.58390.html&psig=AOvVaw2teTtrHWzCuj4kghubjCQG&ust=1535728895469256",
+    imageA: "../src/img/swift.jpeg",
+    imageB: "../src/img/perry.jpg",
     votesA: 0,
     votesB: 0
 }];
@@ -33,6 +33,77 @@ firstImageB.setAttribute("src", gameData[0].imageB);
 
 imageDivA.appendChild(firstImageA);
 imageDivB.appendChild(firstImageB);
+
+var voteA = document.querySelector('#votea');
+var voteB = document.querySelector('#voteb');
+
+voteA.addEventListener('click', function () {
+    gameData[imageIndex].votesA++;
+    imageIndex++;
+    firstImageA.setAttribute("src", gameData[imageIndex].imageA);
+    firstImageB.setAttribute("src", gameData[imageIndex].imageB);
+    //transition code goes here
+});
+
+voteB.addEventListener('click', function () {
+    gameData[imageIndex].votesB++;
+    imageIndex++;
+    firstImageA.setAttribute("src", gameData[imageIndex].imageA);
+    firstImageB.setAttribute("src", gameData[imageIndex].imageB);
+    //transition code goes here
+});
+
+// loop end
+
+// // this saves an item to the browser 
+// localStorage.setItem('gameData', gameData);
+//
+
+// localStorage.setItem('gameData', JSON.stringify(gameData));
+// // this gets an item
+// var gameData = localStorage.getItem('gameData')
+// // if you have to use line 4 use this instead
+// var gameData = JSON.parse(localStorage.getItem('gameData'))
+
+// // final step keep in mind that you can't just reset game data because this may be the first time they load the page so the real final output would be
+// if(localStorage.getItem('gameData')) {
+// 	var gameData = localStorage.getItem('gameData')
+// 	// or line 8 depending
+// }
+
+
+//     // var createImageTag = document.createElement('img');
+//     var imageDivA = document.querySelector("#imageA");
+//     var firstImageA = gameData[i].imageDivA;
+// 	document.firstImageA.appendChild(imageDivA);
+// }
+
+
+// function allImages() {
+//     if (imageIndex >= gameData.length) {
+//         imageIndex = i;
+//     } else {
+//         imageIndex++
+//     }
+
+//     imageA.src = gameData[imageIndex];
+
+//    setInterval(imageA, 3000);
+// }
+
+// allImages();
+
+// const voteA = document.querySelector('#votea')
+// const voteB = document.querySelector('#voteb')
+
+// voteA.addEventListener('click', function(){
+
+// })
+
+// voteB.addEventListener('click', function(){
+
+// })
+
 
 //loop the images 
 
